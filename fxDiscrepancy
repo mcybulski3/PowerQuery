@@ -1,0 +1,21 @@
+Discrepancy Function
+
+Code:
+
+(Source as table)=>
+let
+fldNames = List.Select(Table.ColumnNames(Source), each Text.Contains(_,"|")),
+#"Added Custom" = Table.AddColumn(Source, "Comparison", each if List.Count(List.Distinct(List.RemoveNulls(
+Record.ToList(Record.SelectFields(_,fldNames))
+))) <> 1 then "DISCREPANCY" else "CORRECT"),
+#"Replaced Value" = Table.ReplaceValue(#"Added Custom",null,0,Replacer.ReplaceValue,fldNames)
+in
+#"Replaced Value"
+
+Definition
+
+Allows users to check for discrepancies between columns dynamically. fldNames is created from using a column list searching for
+specified character '|' which can be changed to any delimiter needed.
+Function ignores nulls while checking for data matches. Data matches from column list the new column will display 'CORRECT' else 'DISCREPANCY'
+Lastly the function replaces null values with 0.
+
