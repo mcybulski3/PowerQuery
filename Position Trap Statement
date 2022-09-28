@@ -1,0 +1,12 @@
+Power Query
+
+Position Trap Statement
+
+Code:
+
+if List.Contains({"0".."9", "A".."Z", "a..z", "*"},Text.Middle([Column1],56,1)) then [Column1] else null
+
+Definition
+
+Allows users to trap on any character at defined column position if Text.Middle Statement and Try Number Statement fails.
+//Recommended only if those statements don't work.//
