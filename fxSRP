@@ -1,0 +1,15 @@
+Power Query
+
+fxSRP
+
+Code:
+
+let SRP = (Price as number,Markup as number)as number =>
+
+(Price/Markup)
+
+in 
+   SRP
+   
+Definition
+Allows users to determine SRP by using a price column and a markup variable.
