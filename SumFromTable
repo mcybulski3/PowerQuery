@@ -1,0 +1,11 @@
+Power Query
+
+Sum From Table
+
+Code:
+
+=Table.AddColumn(#"Pivoted Column", "Totals", each List.Sum(Record.ToList(Record.SelectFields(_, List))))
+
+Definition
+
+Allows user to sum columns from another list of dynamic column names.
