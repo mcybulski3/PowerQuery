@@ -1,0 +1,16 @@
+Power Query
+
+
+Text.Middle Statement
+
+Code: 
+
+if Text.Middle([Column1],45,6)="period" then
+([Column1]) else null
+
+Definition
+
+Allows user to test a string of in a [Column] at specified position and return that line to separate column.
+First number specifies position. 
+Second number specifies how many characters to look for.
+
