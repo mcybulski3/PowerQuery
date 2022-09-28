@@ -1,0 +1,18 @@
+Power Query
+
+
+Combination Text.Middle Statement
+
+Code: 
+
+if Text.Middle([Column1],128,1)="." and  Text.Middle([Column1],72,5)="Price" then
+([Column1]) else null
+
+Definition
+
+Allows user to test a string of in a [Column] at specified position and return that line to separate column.
+First number specifies position. 
+Second number specifies how many characters to look for.
+Combines two or more criteria to trap on lines with same criteria on first statement and specify with another character string
+in a different column position.
+'and' can be switched to 'or' if scenario requires it.
