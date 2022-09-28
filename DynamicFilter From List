@@ -1,0 +1,13 @@
+Power Query
+
+Dynamic Filter From List
+
+Code:
+
+= Table.SelectRows(#"Trimmed Text", each List.Contains(PriceType,[Price Type])=true and List.Contains(DC,[DC])=true )
+= Table.SelectRows(#"Trimmed Text3", each List.Contains(Search,[Item Number])=true )
+
+Definition
+
+Allows user to filter on lists of values.
+
