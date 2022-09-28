@@ -1,0 +1,16 @@
+Power Query
+
+fxGrossProfit%
+
+Code:
+
+let
+    GPM = (Netsales as number,Cost as number,NetSales as number)as number =>
+
+   ((Netsales-Cost)/NetSales)* 100
+
+    in GPM
+   
+Definition
+
+Allows users to use columns to create a gross profit percentage 
