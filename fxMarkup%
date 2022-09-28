@@ -1,0 +1,17 @@
+Power Query
+
+fxMarkup%
+
+Code:
+
+let
+
+    MarkupPercentage = (SalesPrice,Cost) =>
+
+   ((SalesPrice-Cost)/Cost)* 100
+
+    in MarkupPercentage
+    
+    Definition
+    
+    Allows users to use two columns to create a custom Mark Up%
