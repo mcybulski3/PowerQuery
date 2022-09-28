@@ -1,0 +1,14 @@
+Power Query
+ 
+Text Import Cleanup Code
+  
+    #"Added Custom" = Table.AddColumn(#"Source", "Table", each Table.FromColumns({Lines.FromBinary([Content], null, null, 1252)})),
+    #"Removed Other Columns" = Table.SelectColumns(#"Added Custom",{"Name", "Table"}),
+    #"Expanded Table" = Table.ExpandTableColumn(#"Removed Other Columns", "Table", {"Column1"}, {"Column1"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Expanded Table",{{"Name", "Source.Name"}})
+in
+    #"Renamed Columns"
+    
+Definition
+Allows user to correct carriage return issues on initial text import to query. // suggest on every text import//
+Paste under first Source line in power query editor.
