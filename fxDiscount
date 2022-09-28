@@ -1,0 +1,16 @@
+Power Query
+
+fx Discount
+
+Code:
+
+let Discount = (Price as number,Percentoff as number)as number =>
+
+(Price * Percentoff)
+
+in 
+   Discount
+   
+Definition
+
+Allows users to use a price column and multiply it against a % to retrieve a discount
